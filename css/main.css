@@ -5328,3 +5328,10 @@ a.credit {
   .low-head-title{
     color: white !important;
   }
+
+.progress-container.progress-primary .progress-bar {
+    background: #1b9104;
+}
+.progress-container.progress-primary .progress {
+  background: rgb(79 233 21 / 40%);
+}
