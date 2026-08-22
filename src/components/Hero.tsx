@@ -93,7 +93,7 @@ export default function Hero() {
               <a
                 href="/Nahid_Karim_Ankur_CV.pdf"
                 download="Nahid_Karim_Ankur_CV.pdf"
-                className="inline-flex items-center space-x-2 px-5 py-2.5 rounded-lg text-sm font-mono-code font-semibold text-black bg-gradient-to-r from-cyan-400 to-emerald-400 hover:from-cyan-300 hover:to-emerald-300 shadow-glow-cyan transition-all duration-200"
+                className="inline-flex items-center justify-center space-x-2 px-5 py-2.5 rounded-lg text-sm font-mono-code font-semibold text-black bg-gradient-to-r from-cyan-400 to-emerald-400 hover:from-cyan-300 hover:to-emerald-300 shadow-glow-cyan transition-all duration-200 flex-1 sm:flex-none"
               >
                 <Download className="w-4 h-4" />
                 <span>Download CV</span>
@@ -102,7 +102,7 @@ export default function Hero() {
               {/* View Experience */}
               <a
                 href="#experience"
-                className="inline-flex items-center space-x-2 px-4 py-2.5 rounded-lg text-sm font-mono-code text-slate-300 bg-slate-900/80 hover:bg-slate-850 border border-slate-800 hover:border-slate-700 hover:text-white transition-all duration-200"
+                className="inline-flex items-center justify-center space-x-2 px-4 py-2.5 rounded-lg text-sm font-mono-code text-slate-300 bg-slate-900/80 hover:bg-slate-850 border border-slate-800 hover:border-slate-700 hover:text-white transition-all duration-200 flex-1 sm:flex-none"
               >
                 <span>Work Experience</span>
                 <ArrowRight className="w-4 h-4" />
@@ -111,7 +111,7 @@ export default function Hero() {
               {/* Copy Email */}
               <button
                 onClick={handleCopyEmail}
-                className="inline-flex items-center space-x-2 px-4 py-2.5 rounded-lg text-sm font-mono-code text-slate-300 bg-slate-900/80 hover:bg-slate-850 border border-slate-800 hover:border-slate-700 transition-all duration-200"
+                className="inline-flex items-center justify-center space-x-2 px-4 py-2.5 rounded-lg text-sm font-mono-code text-slate-300 bg-slate-900/80 hover:bg-slate-850 border border-slate-800 hover:border-slate-700 transition-all duration-200 w-full sm:w-auto"
                 title="Click to copy email address"
               >
                 {copiedEmail ? (

@@ -86,10 +86,10 @@ export default function Footer() {
 
         {/* Bottom copyright line */}
         <div className="pt-6 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono-code text-slate-500">
-          <p>
+          <p className="text-center sm:text-left">
             © {new Date().getFullYear()} Nahid Karim Ankur. Engineered for high performance &amp; production reliability.
           </p>
-          <p className="flex items-center space-x-1">
+          <p className="flex items-center justify-center space-x-1 text-center sm:text-right">
             <span>Built with Next.js, React, TypeScript &amp; Tailwind CSS</span>
           </p>
         </div>
