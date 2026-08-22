@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import SystemsStats from "@/components/SystemsStats";
+import FeaturedProjects from "@/components/FeaturedProjects";
 import TechStack from "@/components/TechStack";
 import Experience from "@/components/Experience";
 import Education from "@/components/Education";
@@ -32,7 +32,7 @@ export default function HomeClientWrapper({ posts }: HomeClientWrapperProps) {
 
         <main className="flex-1 space-y-12 sm:space-y-16">
           <Hero />
-          <SystemsStats />
+          <FeaturedProjects />
           <TechStack />
           <Experience />
           <Education />

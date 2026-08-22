@@ -30,6 +30,19 @@ export interface EducationItem {
   highlights: string[];
 }
 
+export interface ProjectItem {
+  id: string;
+  title: string;
+  subtitle: string;
+  category: string;
+  badge: string;
+  summary: string;
+  highlights: string[];
+  technologies: string[];
+  metrics: { label: string; value: string }[];
+  glowColor: "cyan" | "emerald" | "violet" | "amber";
+}
+
 export const PERSONAL_INFO = {
   name: "Nahid Karim Ankur",
   role: "Software Engineer",
@@ -44,6 +57,96 @@ export const PERSONAL_INFO = {
   bio: "Software Engineer specializing in building scalable backend services, modern full-stack applications, and robust DevOps/production infrastructure. Passionate about system architecture, database optimization, and end-to-end reliability from code to container.",
   quote: "Writing code is only one part of software engineering — the ability to deploy, monitor, and maintain production systems is equally vital.",
 };
+
+export const FEATURED_PROJECTS: ProjectItem[] = [
+  {
+    id: "sib",
+    title: "Staff Information Bureau (SIB)",
+    subtitle: "Nationwide MFI Staff Verification & Bureau Platform",
+    category: "Enterprise Microfinance",
+    badge: "Scale: 1M+ Users",
+    summary:
+      "A centralized verification and management platform engineered to support 1M+ user records across microfinance institutions (MFIs) and regulatory authorities (MRA).",
+    highlights: [
+      "Assisted in preparing for a production launch aimed at 1 million+ users across MFIs nationwide.",
+      "Developed RESTful backend APIs using Node.js with Hapi.js, ensuring secure, high-throughput, and scalable endpoints.",
+      "Contributed to frontend development using Angular 16, NG-ZORRO, and Tailwind CSS, significantly improving UI responsiveness and usability.",
+      "Implemented multi-tenant Role-Based Access Control (RBAC) for different user tiers including MFI, MRA, and Staff.",
+      "Integrated the system with Oracle Database, ensuring optimal data handling and efficient transaction flows.",
+    ],
+    technologies: [
+      "Node.js",
+      "Hapi.js",
+      "Angular 16",
+      "NG-ZORRO",
+      "Oracle SQL",
+      "Tailwind CSS",
+      "RBAC",
+    ],
+    metrics: [
+      { label: "Target Capacity", value: "1M+ Users" },
+      { label: "Architecture", value: "Multi-Tier RBAC" },
+    ],
+    glowColor: "emerald",
+  },
+  {
+    id: "ims",
+    title: "Integrated Microfinance Solution (IMS)",
+    subtitle: "Core Financial Operations & Workflow Automation",
+    category: "Financial Systems",
+    badge: "Enterprise Core",
+    summary:
+      "A comprehensive microfinance platform engineered for reliable transactional integrity, flexible authorization matrices, and high-performance financial management.",
+    highlights: [
+      "Developed RESTful APIs using Node.js (Hapi.js) to handle critical, secure, and scalable backend business logic.",
+      "Implemented Dynamic Role-Based Access Control to manage user permissions flexibly, granularly, and securely.",
+      "Contributed to frontend development using Angular 18 and NG-ZORRO, delivering a responsive, modern single-page user experience.",
+      "Utilized PostgreSQL for reliable relational storage, query plan optimization, and robust ACID transaction handling.",
+    ],
+    technologies: [
+      "Node.js",
+      "Hapi.js",
+      "Angular 18",
+      "NG-ZORRO",
+      "PostgreSQL",
+      "REST APIs",
+      "Dynamic RBAC",
+    ],
+    metrics: [
+      { label: "Database", value: "PostgreSQL" },
+      { label: "Frontend", value: "Angular 18" },
+    ],
+    glowColor: "cyan",
+  },
+  {
+    id: "univerge",
+    title: "Univerge — A Billing Solution",
+    subtitle: "Telecom Rating, Revenue Analytics & Automated Invoicing",
+    category: "Telecom & Billing Engine",
+    badge: "Production Live",
+    summary:
+      "A high-throughput billing and reporting system deployed in production for telecommunications clients to track revenue, manage CDRs, and automate rating.",
+    highlights: [
+      "Built and deployed a scalable billing solution actively powering revenue operations for Tele-Exchange and CrossWorld clients.",
+      "Implemented secure login systems and executive analytics dashboards for real-time revenue and call tracking.",
+      "Developed automated rerating pipelines, failed call management, monthly financial reporting, and scheduled billing workflows.",
+      "Engineered reliable background processing routines for accurate call reconciliation and error-free invoice generation.",
+    ],
+    technologies: [
+      "Node.js",
+      "PostgreSQL",
+      "Automated Billing",
+      "Call Rerating",
+      "Executive Dashboards",
+      "Analytics",
+    ],
+    metrics: [
+      { label: "Clients", value: "Tele-Exchange & CrossWorld" },
+      { label: "Core Logic", value: "Automated Rerating" },
+    ],
+    glowColor: "violet",
+  },
+];
 
 export const SYSTEMS_METRICS = [
   {
