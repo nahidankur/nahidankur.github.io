@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { SKILLS, SkillItem } from "@/data/portfolioData";
+import { SKILLS } from "@/data/portfolioData";
 import {
   Server,
   Layers,
@@ -21,7 +21,6 @@ import {
   Gauge,
   GitBranch,
   Sparkles,
-  Filter,
 } from "lucide-react";
 
 export default function TechStack() {
@@ -39,47 +38,51 @@ export default function TechStack() {
   const filteredSkills =
     selectedCategory === "all"
       ? SKILLS
-      : SKILLS.filter((s) => s.category === selectedCategory || (selectedCategory === "monitoring" && (s.category === "monitoring" || s.category === "tools")));
+      : SKILLS.filter(
+          (s) =>
+            s.category === selectedCategory ||
+            (selectedCategory === "monitoring" &&
+              (s.category === "monitoring" || s.category === "tools"))
+        );
 
   const renderIcon = (iconName: string) => {
-    const className = "w-5 h-5 text-cyan-400";
     switch (iconName) {
       case "Server":
-        return <Server className="w-5 h-5 text-emerald-400" />;
+        return <Server className="w-5 h-5 dark:text-emerald-400 text-claude-600" />;
       case "Layers":
-        return <Layers className="w-5 h-5 text-rose-400" />;
+        return <Layers className="w-5 h-5 text-rose-500 dark:text-rose-400" />;
       case "Cpu":
-        return <Cpu className="w-5 h-5 text-slate-300" />;
+        return <Cpu className="w-5 h-5 text-stone-600 dark:text-slate-300" />;
       case "Network":
-        return <Network className="w-5 h-5 text-cyan-400" />;
+        return <Network className="w-5 h-5 dark:text-cyan-400 text-claude-600" />;
       case "Globe":
-        return <Globe className="w-5 h-5 text-white" />;
+        return <Globe className="w-5 h-5 text-stone-800 dark:text-white" />;
       case "Code2":
-        return <Code2 className="w-5 h-5 text-cyan-400" />;
+        return <Code2 className="w-5 h-5 dark:text-cyan-400 text-claude-600" />;
       case "Component":
-        return <Component className="w-5 h-5 text-rose-400" />;
+        return <Component className="w-5 h-5 text-rose-500 dark:text-rose-400" />;
       case "FileCode2":
-        return <FileCode2 className="w-5 h-5 text-blue-400" />;
+        return <FileCode2 className="w-5 h-5 text-blue-500 dark:text-blue-400" />;
       case "Palette":
-        return <Palette className="w-5 h-5 text-teal-400" />;
+        return <Palette className="w-5 h-5 dark:text-teal-400 text-claude-600" />;
       case "Database":
-        return <Database className="w-5 h-5 text-sky-400" />;
+        return <Database className="w-5 h-5 dark:text-sky-400 text-claude-700" />;
       case "HardDrive":
-        return <HardDrive className="w-5 h-5 text-amber-400" />;
+        return <HardDrive className="w-5 h-5 dark:text-amber-400 text-claude-600" />;
       case "Boxes":
-        return <Boxes className="w-5 h-5 text-cyan-400" />;
+        return <Boxes className="w-5 h-5 dark:text-cyan-400 text-claude-600" />;
       case "Share2":
-        return <Share2 className="w-5 h-5 text-indigo-400" />;
+        return <Share2 className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />;
       case "Terminal":
-        return <Terminal className="w-5 h-5 text-amber-400" />;
+        return <Terminal className="w-5 h-5 dark:text-amber-400 text-claude-600" />;
       case "ShieldCheck":
-        return <ShieldCheck className="w-5 h-5 text-emerald-400" />;
+        return <ShieldCheck className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />;
       case "Gauge":
-        return <Gauge className="w-5 h-5 text-orange-400" />;
+        return <Gauge className="w-5 h-5 text-orange-500 dark:text-orange-400" />;
       case "GitBranch":
-        return <GitBranch className="w-5 h-5 text-rose-400" />;
+        return <GitBranch className="w-5 h-5 text-rose-500 dark:text-rose-400" />;
       default:
-        return <Server className={className} />;
+        return <Server className="w-5 h-5 dark:text-cyan-400 text-claude-600" />;
     }
   };
 
@@ -87,13 +90,13 @@ export default function TechStack() {
     <section id="skills" className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
       <div className="space-y-8">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-800 pb-4">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b dark:border-slate-800 border-stone-200 pb-4">
           <div>
-            <div className="flex items-center space-x-2 text-xs font-mono-code text-cyan-400 uppercase tracking-widest">
+            <div className="flex items-center space-x-2 text-xs font-mono-code dark:text-cyan-400 text-claude-700 uppercase tracking-widest">
               <Sparkles className="w-3.5 h-3.5" />
               <span>Core Competencies &amp; Tooling</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mt-1">
+            <h2 className="text-2xl sm:text-3xl font-bold dark:text-white text-stone-900 tracking-tight mt-1">
               Technical Stack &amp; Skills
             </h2>
           </div>
@@ -106,8 +109,8 @@ export default function TechStack() {
                 onClick={() => setSelectedCategory(cat.id)}
                 className={`px-3 py-1.5 rounded-lg text-xs font-mono-code transition-all duration-200 ${
                   selectedCategory === cat.id
-                    ? "bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 shadow-glow-cyan font-semibold"
-                    : "bg-slate-900/60 text-slate-400 hover:text-slate-200 border border-slate-800 hover:bg-slate-850"
+                    ? "dark:bg-cyan-500/20 bg-claude-500/15 dark:text-cyan-300 text-claude-700 border dark:border-cyan-500/40 border-claude-500/40 shadow-sm font-semibold"
+                    : "dark:bg-slate-900/60 bg-white/80 dark:text-slate-400 text-stone-600 hover:text-stone-900 dark:hover:text-slate-200 border dark:border-slate-800 border-stone-300 dark:hover:bg-slate-850 hover:bg-stone-100 shadow-sm"
                 }`}
               >
                 {cat.label}
@@ -125,7 +128,7 @@ export default function TechStack() {
             >
               <div>
                 <div className="flex items-start justify-between mb-3">
-                  <div className="p-2.5 rounded-xl bg-slate-900/90 border border-slate-800/80 group-hover:border-cyan-500/30 transition-colors">
+                  <div className="p-2.5 rounded-xl dark:bg-slate-900/90 bg-stone-100 border dark:border-slate-800/80 border-stone-200 group-hover:border-claude-500/40 dark:group-hover:border-cyan-500/30 transition-colors">
                     {renderIcon(skill.icon)}
                   </div>
                   <span
@@ -135,18 +138,18 @@ export default function TechStack() {
                   </span>
                 </div>
 
-                <h3 className="text-base font-bold text-white group-hover:text-cyan-300 transition-colors font-mono-code">
+                <h3 className="text-base font-bold dark:text-white text-stone-900 group-hover:text-claude-700 dark:group-hover:text-cyan-300 transition-colors font-mono-code">
                   {skill.name}
                 </h3>
 
-                <p className="text-xs text-slate-400 mt-2 leading-relaxed font-sans">
+                <p className="text-xs dark:text-slate-400 text-stone-600 mt-2 leading-relaxed font-sans">
                   {skill.description}
                 </p>
               </div>
 
-              <div className="mt-4 pt-3 border-t border-slate-800/60 flex items-center justify-between text-[11px] font-mono-code text-slate-500">
+              <div className="mt-4 pt-3 border-t dark:border-slate-800/60 border-stone-200 flex items-center justify-between text-[11px] font-mono-code dark:text-slate-500 text-stone-500">
                 <span className="capitalize">{skill.category}</span>
-                <span className="text-slate-400 group-hover:text-cyan-400 transition-colors">
+                <span className="dark:text-slate-400 text-stone-500 group-hover:text-claude-700 dark:group-hover:text-cyan-400 transition-colors">
                   &gt; active
                 </span>
               </div>

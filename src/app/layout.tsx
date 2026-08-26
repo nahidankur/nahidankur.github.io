@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { PERSONAL_INFO } from "@/data/portfolioData";
+import { ThemeProvider } from "@/context/ThemeContext";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -16,7 +17,10 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#090d16",
+  themeColor: [
+    { media: "(prefers-color-scheme: dark)", color: "#090d16" },
+    { media: "(prefers-color-scheme: light)", color: "#fbf8f3" },
+  ],
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
@@ -66,10 +70,27 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`scroll-smooth dark ${inter.variable} ${jetbrainsMono.variable}`}
     >
-      <body className="bg-background text-slate-100 antialiased min-h-screen selection:bg-cyan-500/30 selection:text-white">
-        {children}
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                var theme = localStorage.getItem('theme');
+                if (theme === 'light') {
+                  document.documentElement.classList.remove('dark');
+                } else {
+                  document.documentElement.classList.add('dark');
+                }
+              } catch (e) {}
+            `,
+          }}
+        />
+      </head>
+      <body className="antialiased min-h-screen selection:bg-cyan-500/30">
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );

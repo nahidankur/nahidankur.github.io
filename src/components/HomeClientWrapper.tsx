@@ -21,7 +21,7 @@ export default function HomeClientWrapper({ posts }: HomeClientWrapperProps) {
   const [terminalOpen, setTerminalOpen] = useState(false);
 
   return (
-    <div className="relative min-h-screen bg-background text-slate-100 cyber-grid">
+    <div className="relative min-h-screen bg-background text-foreground cyber-grid">
       {/* Subtle ambient lighting layers */}
       <div className="fixed inset-0 pointer-events-none z-0 ambient-glow-cyan" />
       <div className="fixed inset-0 pointer-events-none z-0 ambient-glow-violet" />

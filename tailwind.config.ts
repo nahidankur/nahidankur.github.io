@@ -10,14 +10,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#090d16",
+        background: "var(--background)",
+        foreground: "var(--foreground)",
         surface: {
           50: "#1e293b",
           100: "#131b2e",
           200: "#0f172a",
           300: "#0b1120",
-          card: "rgba(15, 23, 42, 0.65)",
-          border: "rgba(148, 163, 184, 0.12)",
+          card: "var(--card-bg)",
+          border: "var(--card-border)",
         },
         primary: {
           50: "#ecfeff",
@@ -25,6 +26,18 @@ const config: Config = {
           400: "#22d3ee",
           500: "#06b6d4",
           600: "#0891b2",
+        },
+        claude: {
+          50: "#fdf8f6",
+          100: "#f8ece8",
+          200: "#f3dad2",
+          300: "#e9beaf",
+          400: "#e08a6b",
+          500: "#d97757", // Claude Iconic Terracotta
+          600: "#cc785c",
+          700: "#c15f3e", // Deep Claude Terracotta
+          800: "#9c492e",
+          900: "#803e29",
         },
         accent: {
           emerald: "#10b981",
@@ -55,6 +68,7 @@ const config: Config = {
       },
       boxShadow: {
         "glow-cyan": "0 0 25px -5px rgba(6, 182, 212, 0.3)",
+        "glow-claude": "0 0 25px -5px rgba(217, 119, 87, 0.35)",
         "glow-emerald": "0 0 25px -5px rgba(16, 185, 129, 0.3)",
         "glow-violet": "0 0 25px -5px rgba(139, 92, 246, 0.3)",
         "glass": "0 8px 32px 0 rgba(0, 0, 0, 0.37)",

@@ -10,7 +10,6 @@ import {
   Boxes,
   FileText,
   Tag,
-  Sparkles,
 } from "lucide-react";
 import { BlogPost } from "@/types/blog";
 import BlogReaderModal from "./BlogReaderModal";
@@ -34,35 +33,35 @@ export default function BlogSection({ initialPosts = [] }: BlogSectionProps) {
   const getIcon = (iconName: string) => {
     switch (iconName) {
       case "Server":
-        return <Server className="w-5 h-5 text-cyan-400" />;
+        return <Server className="w-5 h-5 text-claude-600 dark:text-cyan-400" />;
       case "Boxes":
-        return <Boxes className="w-5 h-5 text-indigo-400" />;
+        return <Boxes className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />;
       default:
-        return <FileText className="w-5 h-5 text-emerald-400" />;
+        return <FileText className="w-5 h-5 text-claude-700 dark:text-emerald-400" />;
     }
   };
 
   return (
     <section id="blog" className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Background ambient lighting */}
-      <div className="absolute top-1/3 right-10 w-[450px] h-[350px] bg-cyan-500/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 left-10 w-[400px] h-[300px] bg-emerald-500/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/3 right-10 w-[450px] h-[350px] dark:bg-cyan-500/5 bg-[#d97757]/8 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 left-10 w-[400px] h-[300px] dark:bg-emerald-500/5 bg-[#cc785c]/6 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto w-full relative z-10">
         {/* Section Header */}
         <div className="text-center space-y-4 mb-12">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-slate-900/80 border border-slate-800 backdrop-blur-md">
-            <BookOpen className="w-3.5 h-3.5 text-cyan-400" />
-            <span className="text-xs font-mono-code text-cyan-300 uppercase tracking-wider">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full dark:bg-slate-900/80 bg-white/90 border dark:border-slate-800 border-stone-200 shadow-sm">
+            <BookOpen className="w-3.5 h-3.5 text-claude-600 dark:text-cyan-400" />
+            <span className="text-xs font-mono-code text-claude-700 dark:text-cyan-300 uppercase tracking-wider font-semibold">
               Engineering Notes &amp; Articles
             </span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl font-bold font-mono-code text-white">
+          <h2 className="text-3xl sm:text-4xl font-bold font-mono-code dark:text-white text-stone-900">
             Architecture Writeups &amp; Tech Insights
           </h2>
 
-          <p className="text-slate-400 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
+          <p className="dark:text-slate-400 text-stone-600 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
             Technical deep dives on backend system design, high-concurrency Node.js optimization,
             PostgreSQL tuning, and zero-downtime DevOps pipelines.
           </p>
@@ -76,8 +75,8 @@ export default function BlogSection({ initialPosts = [] }: BlogSectionProps) {
                   onClick={() => setSelectedTag(tag)}
                   className={`px-3 py-1 rounded-full text-xs font-mono-code transition-all duration-200 ${
                     selectedTag === tag
-                      ? "bg-cyan-500 text-black font-semibold shadow-glow-cyan"
-                      : "bg-slate-900/80 text-slate-400 hover:text-white border border-slate-800 hover:border-slate-700"
+                      ? "dark:bg-cyan-500 dark:text-black bg-claude-500 text-white font-semibold shadow-glow-claude dark:shadow-glow-cyan"
+                      : "dark:bg-slate-900/80 bg-white/90 dark:text-slate-400 text-stone-600 hover:text-stone-900 dark:hover:text-white border dark:border-slate-800 border-stone-300 dark:hover:border-slate-700 hover:border-claude-500/40 shadow-sm"
                   }`}
                 >
                   {tag}
@@ -92,45 +91,45 @@ export default function BlogSection({ initialPosts = [] }: BlogSectionProps) {
           {filteredPosts.map((post) => (
             <article
               key={post.slug}
-              className="group relative rounded-2xl border border-slate-800/90 bg-slate-950/60 backdrop-blur-xl p-6 sm:p-8 flex flex-col justify-between hover:border-cyan-500/40 hover:shadow-glow-cyan transition-all duration-300 cursor-pointer overflow-hidden"
+              className="group relative rounded-2xl border dark:border-slate-800/90 border-stone-200/90 dark:bg-slate-950/60 bg-white/85 p-6 sm:p-8 flex flex-col justify-between hover:border-claude-500/40 dark:hover:border-cyan-500/40 hover:shadow-lg transition-all duration-300 cursor-pointer overflow-hidden shadow-sm"
               onClick={() => setSelectedPost(post)}
             >
               {/* Subtle top gradient accent */}
               <div
-                className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${
+                className={`absolute top-0 left-0 right-0 h-1 bg-[#d97757] bg-gradient-to-r ${
                   post.slug.includes("nodejs")
-                    ? "from-cyan-400 via-emerald-400 to-cyan-300"
-                    : "from-indigo-400 via-cyan-400 to-emerald-400"
-                } opacity-80 group-hover:opacity-100 transition-opacity`}
+                    ? "from-[#c15f3e] via-[#d97757] to-[#e08a6b] dark:from-cyan-400 dark:via-emerald-400 dark:to-cyan-300"
+                    : "from-[#9c492e] via-[#c15f3e] to-[#d97757] dark:from-indigo-400 dark:via-cyan-400 dark:to-emerald-400"
+                } opacity-90 group-hover:opacity-100 transition-opacity`}
               />
 
               <div className="space-y-4">
                 {/* Meta Top: Icon + Category + Read Time */}
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-3">
-                    <div className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 group-hover:border-cyan-500/30 transition-colors">
+                    <div className="p-2.5 rounded-xl dark:bg-slate-900 bg-stone-100 border dark:border-slate-800 border-stone-200 group-hover:border-claude-500/30 dark:group-hover:border-cyan-500/30 transition-colors">
                       {getIcon(post.coverIcon)}
                     </div>
-                    <span className="text-xs font-mono-code px-2.5 py-1 rounded-full bg-slate-900 border border-slate-800 text-cyan-300 font-medium">
+                    <span className="text-xs font-mono-code px-2.5 py-1 rounded-full dark:bg-slate-900 bg-claude-500/10 border dark:border-slate-800 border-claude-500/30 text-claude-700 dark:text-cyan-300 font-medium">
                       {post.category}
                     </span>
                   </div>
 
-                  <div className="flex items-center space-x-3 text-xs font-mono-code text-slate-500">
+                  <div className="flex items-center space-x-3 text-xs font-mono-code dark:text-slate-500 text-stone-500">
                     <span className="flex items-center space-x-1">
-                      <Clock className="w-3 h-3 text-emerald-400" />
+                      <Clock className="w-3 h-3 text-claude-600 dark:text-emerald-400" />
                       <span>{post.readTime}</span>
                     </span>
                   </div>
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl sm:text-2xl font-bold font-mono-code text-white group-hover:text-cyan-300 transition-colors leading-snug">
+                <h3 className="text-xl sm:text-2xl font-bold font-mono-code dark:text-white text-stone-900 group-hover:text-claude-700 dark:group-hover:text-cyan-300 transition-colors leading-snug">
                   {post.title}
                 </h3>
 
                 {/* Excerpt */}
-                <p className="text-sm text-slate-400 leading-relaxed line-clamp-3">
+                <p className="text-sm dark:text-slate-400 text-stone-600 leading-relaxed line-clamp-3">
                   {post.excerpt}
                 </p>
 
@@ -139,9 +138,9 @@ export default function BlogSection({ initialPosts = [] }: BlogSectionProps) {
                   {post.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="inline-flex items-center space-x-1 px-2.5 py-0.5 rounded text-[11px] font-mono-code text-slate-400 bg-slate-900/90 border border-slate-800"
+                      className="inline-flex items-center space-x-1 px-2.5 py-0.5 rounded text-[11px] font-mono-code dark:text-slate-400 text-stone-600 dark:bg-slate-900/90 bg-stone-100 border dark:border-slate-800 border-stone-200"
                     >
-                      <Tag className="w-2.5 h-2.5 text-cyan-400/80" />
+                      <Tag className="w-2.5 h-2.5 text-claude-500 dark:text-cyan-400/80" />
                       <span>{tag}</span>
                     </span>
                   ))}
@@ -149,9 +148,9 @@ export default function BlogSection({ initialPosts = [] }: BlogSectionProps) {
               </div>
 
               {/* Card Footer Action */}
-              <div className="pt-6 mt-6 border-t border-slate-900 flex items-center justify-between">
-                <div className="flex items-center space-x-2 text-xs font-mono-code text-slate-500">
-                  <Calendar className="w-3.5 h-3.5 text-slate-400" />
+              <div className="pt-6 mt-6 border-t dark:border-slate-900 border-stone-200 flex items-center justify-between">
+                <div className="flex items-center space-x-2 text-xs font-mono-code dark:text-slate-500 text-stone-500">
+                  <Calendar className="w-3.5 h-3.5 text-stone-400 dark:text-slate-400" />
                   <span>{post.date}</span>
                 </div>
 
@@ -160,7 +159,7 @@ export default function BlogSection({ initialPosts = [] }: BlogSectionProps) {
                     e.stopPropagation();
                     setSelectedPost(post);
                   }}
-                  className="inline-flex items-center space-x-2 text-xs font-mono-code font-semibold text-cyan-400 hover:text-cyan-300 group-hover:translate-x-1 transition-all"
+                  className="inline-flex items-center space-x-2 text-xs font-mono-code font-semibold text-claude-700 dark:text-cyan-400 hover:text-claude-800 dark:hover:text-cyan-300 group-hover:translate-x-1 transition-all"
                 >
                   <span>Read Article</span>
                   <ArrowRight className="w-3.5 h-3.5" />

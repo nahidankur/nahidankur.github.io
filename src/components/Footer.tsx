@@ -29,26 +29,26 @@ export default function Footer() {
   };
 
   return (
-    <footer className="border-t border-slate-800/80 bg-slate-950/80 backdrop-blur-md pt-12 pb-8 px-4 sm:px-6 lg:px-8">
+    <footer className="border-t dark:border-slate-800/80 border-stone-200 dark:bg-slate-950/80 bg-stone-100/90 backdrop-blur-md pt-12 pb-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto space-y-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Brand Info */}
           <div className="space-y-1 text-center md:text-left">
-            <p className="font-mono-code font-bold text-white text-base">
+            <p className="font-mono-code font-bold dark:text-white text-stone-900 text-base">
               {PERSONAL_INFO.name}{" "}
-              <span className="text-cyan-400 font-normal">// Software Engineer</span>
+              <span className="text-claude-700 dark:text-cyan-400 font-normal">// Software Engineer</span>
             </p>
-            <p className="text-xs font-mono-code text-slate-400">
+            <p className="text-xs font-mono-code dark:text-slate-400 text-stone-500">
               Celloscope Limited • Mohammadpur, Dhaka, Bangladesh
             </p>
           </div>
 
           {/* Live Clock & System Status */}
-          <div className="flex items-center space-x-3 px-4 py-2 rounded-xl bg-slate-900/90 border border-slate-800 font-mono-code text-xs">
-            <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span className="text-slate-300">SYSTEM HEALTH: NOMINAL</span>
+          <div className="flex items-center space-x-3 px-4 py-2 rounded-xl dark:bg-slate-900/90 bg-white/90 border dark:border-slate-800 border-stone-300 font-mono-code text-xs shadow-sm">
+            <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+            <span className="dark:text-slate-300 text-stone-700">SYSTEM HEALTH: NOMINAL</span>
             {currentTime && (
-              <span className="text-cyan-400 border-l border-slate-800 pl-3">
+              <span className="text-claude-700 dark:text-cyan-400 border-l dark:border-slate-800 border-stone-200 pl-3">
                 {currentTime}
               </span>
             )}
@@ -60,7 +60,7 @@ export default function Footer() {
               href={PERSONAL_INFO.github}
               target="_blank"
               rel="noreferrer"
-              className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:border-slate-700 transition-colors"
+              className="p-2.5 rounded-xl dark:bg-slate-900 bg-white border dark:border-slate-800 border-stone-300 text-stone-600 dark:text-slate-400 hover:text-stone-900 dark:hover:text-white hover:border-stone-400 transition-colors shadow-sm"
               title="GitHub Profile"
             >
               <Github className="w-4 h-4" />
@@ -69,14 +69,14 @@ export default function Footer() {
               href={PERSONAL_INFO.linkedin}
               target="_blank"
               rel="noreferrer"
-              className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-cyan-400 hover:border-cyan-500/40 transition-colors"
+              className="p-2.5 rounded-xl dark:bg-slate-900 bg-white border dark:border-slate-800 border-stone-300 text-stone-600 dark:text-slate-400 hover:text-claude-700 dark:hover:text-cyan-400 hover:border-claude-500/40 transition-colors shadow-sm"
               title="LinkedIn Profile"
             >
               <Linkedin className="w-4 h-4" />
             </a>
             <button
               onClick={scrollToTop}
-              className="p-2.5 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 hover:bg-cyan-500/20 hover:border-cyan-400 transition-all"
+              className="p-2.5 rounded-xl dark:bg-cyan-500/10 bg-claude-500/10 border dark:border-cyan-500/30 border-claude-500/30 text-claude-700 dark:text-cyan-400 hover:bg-claude-500/20 dark:hover:bg-cyan-500/20 hover:border-claude-500 transition-all shadow-sm"
               title="Scroll to Top"
             >
               <ArrowUp className="w-4 h-4" />
@@ -85,7 +85,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom copyright line */}
-        <div className="pt-6 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono-code text-slate-500">
+        <div className="pt-6 border-t dark:border-slate-900 border-stone-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono-code dark:text-slate-500 text-stone-500">
           <p className="text-center sm:text-left">
             © {new Date().getFullYear()} Nahid Karim Ankur. Engineered for high performance &amp; production reliability.
           </p>

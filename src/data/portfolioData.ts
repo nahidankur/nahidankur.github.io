@@ -55,7 +55,7 @@ export const PERSONAL_INFO = {
   portfolio: "https://nahidankur.github.io",
   status: "Available for high-impact engineering opportunities",
   bio: "Software Engineer specializing in building scalable backend services, modern full-stack applications, and robust DevOps/production infrastructure. Passionate about system architecture, database optimization, and end-to-end reliability from code to container.",
-  quote: "Writing code is only one part of software engineering — the ability to deploy, monitor, and maintain production systems is equally vital.",
+  quote: "A true engineer does not merely forge the code. They wield it in production, guard its health, and stand ready to maintain it when the storms arrive.",
 };
 
 export const FEATURED_PROJECTS: ProjectItem[] = [

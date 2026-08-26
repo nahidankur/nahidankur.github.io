@@ -52,7 +52,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   return (
-    <div className="relative min-h-screen bg-background text-slate-100 cyber-grid">
+    <div className="relative min-h-screen bg-background text-foreground cyber-grid">
       <div className="fixed inset-0 pointer-events-none z-0 ambient-glow-cyan" />
       <div className="fixed inset-0 pointer-events-none z-0 ambient-glow-violet" />
 
@@ -65,7 +65,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
             <div className="mb-8">
               <Link
                 href="/#blog"
-                className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-lg text-xs font-mono-code text-slate-400 hover:text-white bg-slate-900/80 hover:bg-slate-850 border border-slate-800 transition-colors"
+                className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-lg text-xs font-mono-code dark:text-slate-400 text-stone-600 hover:text-stone-900 dark:hover:text-white dark:bg-slate-900/80 bg-stone-100 dark:hover:bg-slate-850 hover:bg-stone-200 border dark:border-slate-800 border-stone-300 transition-colors shadow-sm"
               >
                 <ArrowLeft className="w-4 h-4" />
                 <span>Back to Portfolio &amp; Articles</span>
@@ -73,44 +73,44 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
             </div>
 
             {/* Article Container Card */}
-            <article className="rounded-2xl border border-slate-800 bg-slate-950/70 backdrop-blur-xl p-6 sm:p-10 shadow-2xl overflow-hidden">
+            <article className="rounded-2xl border dark:border-slate-800 border-stone-300 dark:bg-slate-950/70 bg-white/90 backdrop-blur-xl p-6 sm:p-10 shadow-2xl overflow-hidden">
               {/* Header Meta */}
-              <div className="space-y-4 border-b border-slate-800/80 pb-8 text-left">
-                <div className="flex flex-wrap items-center gap-3 text-xs font-mono-code text-slate-400">
-                  <span className="px-2.5 py-1 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 font-medium">
+              <div className="space-y-4 border-b dark:border-slate-800/80 border-stone-200 pb-8 text-left">
+                <div className="flex flex-wrap items-center gap-3 text-xs font-mono-code dark:text-slate-400 text-stone-500">
+                  <span className="px-2.5 py-1 rounded-full dark:bg-cyan-500/10 bg-claude-500/10 text-claude-700 dark:text-cyan-300 border dark:border-cyan-500/20 border-claude-500/30 font-medium">
                     {post.category}
                   </span>
                   <span>•</span>
                   <span className="flex items-center space-x-1.5">
-                    <Calendar className="w-3.5 h-3.5 text-cyan-400" />
+                    <Calendar className="w-3.5 h-3.5 text-claude-600 dark:text-cyan-400" />
                     <span>{post.date}</span>
                   </span>
                   <span>•</span>
                   <span className="flex items-center space-x-1.5">
-                    <Clock className="w-3.5 h-3.5 text-emerald-400" />
+                    <Clock className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
                     <span>{post.readTime}</span>
                   </span>
                 </div>
 
-                <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold font-mono-code text-white leading-tight">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold font-mono-code dark:text-white text-stone-900 leading-tight">
                   {post.title}
                 </h1>
 
-                <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-sans">
+                <p className="text-base sm:text-lg dark:text-slate-300 text-stone-700 leading-relaxed font-sans">
                   {post.excerpt}
                 </p>
 
                 {/* Author Details Strip */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-4">
                   <div className="flex items-center space-x-3">
-                    <div className="h-11 w-11 rounded-full bg-slate-900 border border-cyan-500/30 flex items-center justify-center text-cyan-400 font-mono-code font-bold text-sm">
+                    <div className="h-11 w-11 rounded-full dark:bg-slate-900 bg-stone-100 border dark:border-cyan-500/30 border-claude-500/40 flex items-center justify-center text-claude-700 dark:text-cyan-400 font-mono-code font-bold text-sm">
                       NK
                     </div>
                     <div>
-                      <p className="text-sm font-semibold text-white font-mono-code">
+                      <p className="text-sm font-semibold dark:text-white text-stone-900 font-mono-code">
                         {post.author}
                       </p>
-                      <p className="text-xs text-slate-400 font-mono-code">
+                      <p className="text-xs dark:text-slate-400 text-stone-500 font-mono-code">
                         {post.role}
                       </p>
                     </div>
@@ -121,9 +121,9 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                     {post.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="inline-flex items-center space-x-1 px-2.5 py-0.5 rounded text-[11px] font-mono-code text-slate-400 bg-slate-900 border border-slate-800"
+                        className="inline-flex items-center space-x-1 px-2.5 py-0.5 rounded text-[11px] font-mono-code dark:text-slate-400 text-stone-600 dark:bg-slate-900 bg-stone-100 border dark:border-slate-800 border-stone-300"
                       >
-                        <Tag className="w-2.5 h-2.5 text-cyan-400/80" />
+                        <Tag className="w-2.5 h-2.5 text-claude-500 dark:text-cyan-400/80" />
                         <span>{tag}</span>
                       </span>
                     ))}
@@ -137,17 +137,17 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
               </div>
 
               {/* Bottom Footer */}
-              <div className="pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="pt-8 border-t dark:border-slate-800/80 border-stone-200 flex flex-col sm:flex-row items-center justify-between gap-4">
                 <Link
                   href="/#contact"
-                  className="inline-flex items-center space-x-2 px-5 py-2.5 rounded-lg text-xs font-mono-code font-semibold text-black bg-gradient-to-r from-cyan-400 to-emerald-400 hover:from-cyan-300 hover:to-emerald-300 shadow-glow-cyan transition-all"
+                  className="btn-primary inline-flex items-center space-x-2 px-5 py-2.5 rounded-lg text-xs font-mono-code font-semibold"
                 >
                   <span>Discuss This Architecture With Me</span>
                 </Link>
 
                 <Link
                   href="/#blog"
-                  className="text-xs font-mono-code text-slate-400 hover:text-cyan-400 transition-colors"
+                  className="text-xs font-mono-code dark:text-slate-400 text-stone-600 hover:text-claude-700 dark:hover:text-cyan-400 transition-colors"
                 >
                   ← Explore More Technical Writeups
                 </Link>
