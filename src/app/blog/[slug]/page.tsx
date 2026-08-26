@@ -61,14 +61,14 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
 
         <main className="flex-1 pt-32 pb-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto w-full">
-            {/* Back to Blog Navigation */}
+            {/* Back to Notes Navigation */}
             <div className="mb-8">
               <Link
-                href="/#blog"
+                href="/notes"
                 className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-lg text-xs font-mono-code dark:text-slate-400 text-stone-600 hover:text-stone-900 dark:hover:text-white dark:bg-slate-900/80 bg-stone-100 dark:hover:bg-slate-850 hover:bg-stone-200 border dark:border-slate-800 border-stone-300 transition-colors shadow-sm"
               >
                 <ArrowLeft className="w-4 h-4" />
-                <span>Back to Portfolio &amp; Articles</span>
+                <span>Back to Engineering Notes</span>
               </Link>
             </div>
 
@@ -146,10 +146,10 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                 </Link>
 
                 <Link
-                  href="/#blog"
+                  href="/notes"
                   className="text-xs font-mono-code dark:text-slate-400 text-stone-600 hover:text-claude-700 dark:hover:text-cyan-400 transition-colors"
                 >
-                  ← Explore More Technical Writeups
+                  ← Explore All Engineering Notes
                 </Link>
               </div>
             </article>

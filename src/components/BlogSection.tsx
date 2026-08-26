@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import {
   BookOpen,
   Calendar,
@@ -10,6 +11,7 @@ import {
   Boxes,
   FileText,
   Tag,
+  Sparkles,
 } from "lucide-react";
 import { BlogPost } from "@/types/blog";
 import BlogReaderModal from "./BlogReaderModal";
@@ -22,13 +24,16 @@ export default function BlogSection({ initialPosts = [] }: BlogSectionProps) {
   const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
   const [selectedTag, setSelectedTag] = useState<string>("All");
 
-  // Extract all unique tags
+  // Extract unique tags from all posts
   const allTags = ["All", ...Array.from(new Set(initialPosts.flatMap((p) => p.tags)))];
 
   const filteredPosts =
     selectedTag === "All"
       ? initialPosts
       : initialPosts.filter((p) => p.tags.includes(selectedTag));
+
+  // Home section shows top 4 featured posts
+  const displayedPosts = filteredPosts.slice(0, 4);
 
   const getIcon = (iconName: string) => {
     switch (iconName) {
@@ -42,15 +47,18 @@ export default function BlogSection({ initialPosts = [] }: BlogSectionProps) {
   };
 
   return (
-    <section id="blog" className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section id="notes" className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      {/* Invisible anchor for backward compatibility */}
+      <span id="blog" className="absolute -top-24 pointer-events-none" />
+
       {/* Background ambient lighting */}
       <div className="absolute top-1/3 right-10 w-[450px] h-[350px] dark:bg-cyan-500/5 bg-[#d97757]/8 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 left-10 w-[400px] h-[300px] dark:bg-emerald-500/5 bg-[#cc785c]/6 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto w-full relative z-10">
+      <div className="max-w-7xl mx-auto w-full relative z-10 space-y-12">
         {/* Section Header */}
-        <div className="text-center space-y-4 mb-12">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full dark:bg-slate-900/80 bg-white/90 border dark:border-slate-800 border-stone-200 shadow-sm">
+        <div className="text-center space-y-4">
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full dark:bg-slate-900/80 bg-white/90 border dark:border-slate-800 border-stone-200 shadow-sm">
             <BookOpen className="w-3.5 h-3.5 text-claude-600 dark:text-cyan-400" />
             <span className="text-xs font-mono-code text-claude-700 dark:text-cyan-300 uppercase tracking-wider font-semibold">
               Engineering Notes &amp; Articles
@@ -68,14 +76,14 @@ export default function BlogSection({ initialPosts = [] }: BlogSectionProps) {
 
           {/* Tag Filter Bar */}
           {allTags.length > 1 && (
-            <div className="flex flex-wrap items-center justify-center gap-2 pt-4">
+            <div className="flex flex-wrap items-center justify-center gap-2 pt-2">
               {allTags.map((tag) => (
                 <button
                   key={tag}
                   onClick={() => setSelectedTag(tag)}
                   className={`px-3 py-1 rounded-full text-xs font-mono-code transition-all duration-200 ${
                     selectedTag === tag
-                      ? "dark:bg-cyan-500 dark:text-black bg-claude-500 text-white font-semibold shadow-glow-claude dark:shadow-glow-cyan"
+                      ? "dark:bg-cyan-500 dark:text-black dark:border-cyan-500 bg-[#d97757] text-white font-semibold shadow-sm border border-[#d97757]"
                       : "dark:bg-slate-900/80 bg-white/90 dark:text-slate-400 text-stone-600 hover:text-stone-900 dark:hover:text-white border dark:border-slate-800 border-stone-300 dark:hover:border-slate-700 hover:border-claude-500/40 shadow-sm"
                   }`}
                 >
@@ -86,15 +94,15 @@ export default function BlogSection({ initialPosts = [] }: BlogSectionProps) {
           )}
         </div>
 
-        {/* Blog Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {filteredPosts.map((post) => (
+        {/* Featured Blog Cards Grid (Max 4 on Homepage) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+          {displayedPosts.map((post) => (
             <article
               key={post.slug}
               className="group relative rounded-2xl border dark:border-slate-800/90 border-stone-200/90 dark:bg-slate-950/60 bg-white/85 p-6 sm:p-8 flex flex-col justify-between hover:border-claude-500/40 dark:hover:border-cyan-500/40 hover:shadow-lg transition-all duration-300 cursor-pointer overflow-hidden shadow-sm"
               onClick={() => setSelectedPost(post)}
             >
-              {/* Subtle top gradient accent */}
+              {/* Top Accent Gradient Line */}
               <div
                 className={`absolute top-0 left-0 right-0 h-1 bg-[#d97757] bg-gradient-to-r ${
                   post.slug.includes("nodejs")
@@ -167,6 +175,18 @@ export default function BlogSection({ initialPosts = [] }: BlogSectionProps) {
               </div>
             </article>
           ))}
+        </div>
+
+        {/* Prominent "See More Notes" CTA to Dedicated Page */}
+        <div className="text-center pt-4">
+          <Link
+            href="/notes"
+            className="btn-primary inline-flex items-center space-x-2.5 px-6 py-3 rounded-xl font-mono-code text-sm font-semibold shadow-md group hover:scale-[1.02] transition-transform"
+          >
+            <Sparkles className="w-4 h-4" />
+            <span>Explore All Engineering Notes ({initialPosts.length})</span>
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </Link>
         </div>
       </div>
 

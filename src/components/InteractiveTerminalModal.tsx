@@ -74,12 +74,12 @@ export default function InteractiveTerminalModal({ isOpen, onClose }: TerminalPr
       case "?":
         response = (
           <div className="space-y-1 dark:text-slate-300 text-stone-700">
-            <p className="text-cyan-600 dark:text-cyan-400 font-bold">Available Commands:</p>
+            <p className="text-claude-700 dark:text-cyan-400 font-bold">Available Commands:</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 text-xs">
               <div><span className="text-emerald-600 dark:text-emerald-400 font-semibold">whoami</span> - Developer bio &amp; profile</div>
               <div><span className="text-emerald-600 dark:text-emerald-400 font-semibold">skills</span> - List technical skills &amp; stack</div>
               <div><span className="text-emerald-600 dark:text-emerald-400 font-semibold">work</span> - Current role at Celloscope</div>
-              <div><span className="text-emerald-600 dark:text-emerald-400 font-semibold">blog</span> - Technical architecture writeups</div>
+              <div><span className="text-emerald-600 dark:text-emerald-400 font-semibold">notes</span> - Engineering Notes &amp; writeups</div>
               <div><span className="text-emerald-600 dark:text-emerald-400 font-semibold">education</span> - Academic background</div>
               <div><span className="text-emerald-600 dark:text-emerald-400 font-semibold">cv / resume</span> - Download official PDF CV</div>
               <div><span className="text-emerald-600 dark:text-emerald-400 font-semibold">contact</span> - Phone, email, socials</div>
@@ -91,24 +91,30 @@ export default function InteractiveTerminalModal({ isOpen, onClose }: TerminalPr
         );
         break;
 
+      case "notes":
       case "blog":
       case "blogs":
       case "articles":
         response = (
           <div className="space-y-2 dark:text-slate-300 text-stone-700 text-xs">
-            <p className="text-cyan-600 dark:text-cyan-400 font-bold">Published Architecture Articles:</p>
+            <div className="flex items-center justify-between">
+              <p className="text-claude-700 dark:text-cyan-400 font-bold">Engineering Notes &amp; Articles:</p>
+              <a href="/notes" className="text-claude-700 dark:text-cyan-300 underline font-semibold text-[11px]">
+                View all notes &rarr;
+              </a>
+            </div>
             <div className="space-y-1.5 pl-2">
               <div>
                 <p className="dark:text-white text-stone-900 font-semibold">1. Architecting High-Throughput Node.js Microservices</p>
                 <p className="dark:text-slate-400 text-stone-500 text-[11px]">Event loop lag mitigation &amp; PostgreSQL connection pooling.</p>
-                <a href="/blog/architecting-high-throughput-nodejs-services" className="text-cyan-600 dark:text-cyan-300 underline text-[11px]">
+                <a href="/blog/architecting-high-throughput-nodejs-services" className="text-claude-700 dark:text-cyan-300 underline text-[11px]">
                   Read article &rarr;
                 </a>
               </div>
               <div className="pt-1">
                 <p className="dark:text-white text-stone-900 font-semibold">2. Zero-Downtime Container Deployments with Docker Swarm</p>
                 <p className="dark:text-slate-400 text-stone-500 text-[11px]">Rolling updates, Nginx edge proxying, and Prometheus telemetry.</p>
-                <a href="/blog/zero-downtime-deployments-docker-swarm-nginx" className="text-cyan-600 dark:text-cyan-300 underline text-[11px]">
+                <a href="/blog/zero-downtime-deployments-docker-swarm-nginx" className="text-claude-700 dark:text-cyan-300 underline text-[11px]">
                   Read article &rarr;
                 </a>
               </div>

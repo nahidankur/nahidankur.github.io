@@ -137,7 +137,7 @@ h:/Portfolio
 - **Name**: Nahid Karim Ankur
 - **Role**: Software Engineer
 - **Company**: Celloscope Limited
-- **Location**: Mohammadpur, Dhaka, Bangladesh
+- **Location**: Dhaka, Bangladesh
 - **Email**: nahidankur@gmail.com
 - **Phone**: +8801962856913
 - **LinkedIn**: [linkedin.com/in/nahidankur](https://linkedin.com/in/nahidankur)

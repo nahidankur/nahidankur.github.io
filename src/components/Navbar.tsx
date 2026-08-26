@@ -29,7 +29,7 @@ export default function Navbar({ onOpenTerminal }: NavbarProps) {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
 
-      const sections = ["projects", "skills", "experience", "education", "blog", "contact"];
+      const sections = ["projects", "skills", "experience", "education", "notes", "contact"];
       const scrollPosition = window.scrollY + 200;
 
       for (const section of sections) {
@@ -54,7 +54,7 @@ export default function Navbar({ onOpenTerminal }: NavbarProps) {
     { name: "Tech Stack", href: "/#skills" },
     { name: "Experience", href: "/#experience" },
     { name: "Education", href: "/#education" },
-    { name: "Blog", href: "/#blog" },
+    { name: "Engineering Notes", href: "/#notes" },
     { name: "Contact", href: "/#contact" },
   ];
 

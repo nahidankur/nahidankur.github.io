@@ -54,7 +54,7 @@ export default function Hero() {
               </div>
               <p className="text-[11px] font-mono-code dark:text-slate-500 text-stone-500 flex items-center space-x-1.5 pl-1">
                 <MapPin className="w-3.5 h-3.5 text-stone-400 dark:text-slate-400" />
-                <span>Mohammadpur, Dhaka, Bangladesh</span>
+                <span>Dhaka, Bangladesh</span>
               </p>
             </div>
 

@@ -47,7 +47,7 @@ export const PERSONAL_INFO = {
   name: "Nahid Karim Ankur",
   role: "Software Engineer",
   company: "Celloscope Limited",
-  location: "Mohammadpur, Dhaka, Bangladesh",
+  location: "Dhaka, Bangladesh",
   email: "nahidankur@gmail.com",
   phone: "+8801962856913",
   linkedin: "https://linkedin.com/in/nahidankur",

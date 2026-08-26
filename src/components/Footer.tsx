@@ -39,7 +39,7 @@ export default function Footer() {
               <span className="text-claude-700 dark:text-cyan-400 font-normal">// Software Engineer</span>
             </p>
             <p className="text-xs font-mono-code dark:text-slate-400 text-stone-500">
-              Celloscope Limited • Mohammadpur, Dhaka, Bangladesh
+              Celloscope Limited • Dhaka, Bangladesh
             </p>
           </div>
 
