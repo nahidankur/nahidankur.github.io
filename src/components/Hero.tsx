@@ -159,23 +159,26 @@ export default function Hero() {
           <div className="lg:col-span-5 w-full">
             <div className="relative rounded-2xl border border-slate-800 bg-slate-950/80 backdrop-blur-xl shadow-2xl overflow-hidden group hover:border-slate-700 transition-all duration-300">
               {/* Terminal Window Header */}
-              <div className="flex items-center justify-between px-4 py-3 bg-slate-900/90 border-b border-slate-800">
-                <div className="flex items-center space-x-2">
-                  <div className="w-3 h-3 rounded-full bg-rose-500/80" />
-                  <div className="w-3 h-3 rounded-full bg-amber-500/80" />
-                  <div className="w-3 h-3 rounded-full bg-emerald-500/80" />
-                  <span className="ml-2 text-xs font-mono-code text-slate-400">
-                    ankur@celloscope-node:~
+              <div className="flex items-center justify-between gap-2 px-3.5 sm:px-4 py-2.5 sm:py-3 bg-slate-900/90 border-b border-slate-800">
+                <div className="flex items-center space-x-2 min-w-0">
+                  <div className="flex items-center space-x-1.5 shrink-0">
+                    <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-rose-500/80" />
+                    <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-amber-500/80" />
+                    <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-emerald-500/80" />
+                  </div>
+                  <span className="text-[11px] sm:text-xs font-mono-code text-slate-400 truncate whitespace-nowrap">
+                    <span className="hidden sm:inline">ankur@celloscope-node:~</span>
+                    <span className="sm:hidden">ankur@node:~</span>
                   </span>
                 </div>
 
                 {/* Tabs */}
-                <div className="flex items-center space-x-1 bg-slate-950/60 p-0.5 rounded-lg border border-slate-800/80">
+                <div className="flex items-center space-x-0.5 sm:space-x-1 bg-slate-950/60 p-0.5 rounded-lg border border-slate-800/80 shrink-0">
                   <button
                     onClick={() => setActiveTab("bio")}
-                    className={`px-2.5 py-1 rounded text-[11px] font-mono-code transition-colors ${
+                    className={`px-2 sm:px-2.5 py-1 rounded text-[10px] sm:text-[11px] font-mono-code transition-colors whitespace-nowrap ${
                       activeTab === "bio"
-                        ? "bg-slate-800 text-cyan-300 font-semibold"
+                        ? "bg-slate-800 text-cyan-300 font-semibold shadow-sm"
                         : "text-slate-500 hover:text-slate-300"
                     }`}
                   >
@@ -183,9 +186,9 @@ export default function Hero() {
                   </button>
                   <button
                     onClick={() => setActiveTab("stack")}
-                    className={`px-2.5 py-1 rounded text-[11px] font-mono-code transition-colors ${
+                    className={`px-2 sm:px-2.5 py-1 rounded text-[10px] sm:text-[11px] font-mono-code transition-colors whitespace-nowrap ${
                       activeTab === "stack"
-                        ? "bg-slate-800 text-cyan-300 font-semibold"
+                        ? "bg-slate-800 text-cyan-300 font-semibold shadow-sm"
                         : "text-slate-500 hover:text-slate-300"
                     }`}
                   >
@@ -193,9 +196,9 @@ export default function Hero() {
                   </button>
                   <button
                     onClick={() => setActiveTab("infra")}
-                    className={`px-2.5 py-1 rounded text-[11px] font-mono-code transition-colors ${
+                    className={`px-2 sm:px-2.5 py-1 rounded text-[10px] sm:text-[11px] font-mono-code transition-colors whitespace-nowrap ${
                       activeTab === "infra"
-                        ? "bg-slate-800 text-cyan-300 font-semibold"
+                        ? "bg-slate-800 text-cyan-300 font-semibold shadow-sm"
                         : "text-slate-500 hover:text-slate-300"
                     }`}
                   >
@@ -205,7 +208,7 @@ export default function Hero() {
               </div>
 
               {/* Code Editor Body */}
-              <div className="p-5 font-mono-code text-xs sm:text-[13px] leading-relaxed overflow-x-auto min-h-[330px] flex flex-col justify-between">
+              <div className="p-4 sm:p-5 font-mono-code text-[11px] xs:text-xs sm:text-[13px] leading-relaxed overflow-x-auto min-h-[340px] flex flex-col justify-between">
                 {activeTab === "bio" && (
                   <div className="space-y-1">
                     <p className="text-slate-500">// Developer Profile &amp; Current Position</p>
@@ -214,33 +217,33 @@ export default function Hero() {
                       <span className="text-cyan-300">engineer</span>:{" "}
                       <span className="text-amber-300">SoftwareEngineer</span> = &#123;
                     </p>
-                    <p className="pl-4">
+                    <p className="pl-3 sm:pl-4">
                       <span className="text-slate-300">name</span>:{" "}
                       <span className="text-emerald-300">&quot;Nahid Karim Ankur&quot;</span>,
                     </p>
-                    <p className="pl-4">
+                    <p className="pl-3 sm:pl-4">
                       <span className="text-slate-300">company</span>:{" "}
                       <span className="text-emerald-300">&quot;Celloscope Limited&quot;</span>,
                     </p>
-                    <p className="pl-4">
+                    <p className="pl-3 sm:pl-4">
                       <span className="text-slate-300">role</span>:{" "}
                       <span className="text-emerald-300">&quot;Software Engineer&quot;</span>,
                     </p>
-                    <p className="pl-4">
+                    <p className="pl-3 sm:pl-4">
                       <span className="text-slate-300">location</span>:{" "}
                       <span className="text-emerald-300">&quot;Dhaka, Bangladesh&quot;</span>,
                     </p>
-                    <p className="pl-4">
+                    <p className="pl-3 sm:pl-4">
                       <span className="text-slate-300">primaryDomain</span>: [
                     </p>
-                    <p className="pl-8 text-cyan-300">
+                    <p className="pl-6 sm:pl-8 text-cyan-300">
                       &quot;Backend Systems&quot;, &quot;RESTful APIs&quot;,
                     </p>
-                    <p className="pl-8 text-cyan-300">
+                    <p className="pl-6 sm:pl-8 text-cyan-300">
                       &quot;Docker Swarm&quot;, &quot;Database Optimization&quot;
                     </p>
-                    <p className="pl-4">],</p>
-                    <p className="pl-4">
+                    <p className="pl-3 sm:pl-4">],</p>
+                    <p className="pl-3 sm:pl-4">
                       <span className="text-slate-300">status</span>:{" "}
                       <span className="text-emerald-400">&quot;Active (Sep 2023 - Present)&quot;</span>
                     </p>
@@ -252,37 +255,52 @@ export default function Hero() {
                   <div className="space-y-1">
                     <p className="text-slate-500">// Verified Technology Stack</p>
                     <p className="text-slate-300">&#123;</p>
-                    <p className="pl-4">
+                    <p className="pl-3 sm:pl-4">
                       <span className="text-cyan-300">&quot;backend&quot;</span>: [
+                    </p>
+                    <p className="pl-6 sm:pl-8">
                       <span className="text-emerald-300">&quot;Node.js&quot;</span>,{" "}
                       <span className="text-emerald-300">&quot;NestJS&quot;</span>,{" "}
                       <span className="text-emerald-300">&quot;Hapi.js&quot;</span>,{" "}
-                      <span className="text-emerald-300">&quot;Express.js&quot;</span>],
+                      <span className="text-emerald-300">&quot;Express.js&quot;</span>
                     </p>
-                    <p className="pl-4">
+                    <p className="pl-3 sm:pl-4 text-slate-300">],</p>
+                    <p className="pl-3 sm:pl-4">
                       <span className="text-cyan-300">&quot;frontend&quot;</span>: [
+                    </p>
+                    <p className="pl-6 sm:pl-8">
                       <span className="text-emerald-300">&quot;Next.js&quot;</span>,{" "}
                       <span className="text-emerald-300">&quot;React&quot;</span>,{" "}
                       <span className="text-emerald-300">&quot;Angular&quot;</span>,{" "}
-                      <span className="text-emerald-300">&quot;TypeScript&quot;</span>],
+                      <span className="text-emerald-300">&quot;TypeScript&quot;</span>
                     </p>
-                    <p className="pl-4">
+                    <p className="pl-3 sm:pl-4 text-slate-300">],</p>
+                    <p className="pl-3 sm:pl-4">
                       <span className="text-cyan-300">&quot;databases&quot;</span>: [
-                      <span className="text-emerald-300">&quot;PostgreSQL&quot;</span>,{" "}
-                      <span className="text-emerald-300">&quot;Oracle SQL&quot;</span>],
                     </p>
-                    <p className="pl-4">
+                    <p className="pl-6 sm:pl-8">
+                      <span className="text-emerald-300">&quot;PostgreSQL&quot;</span>,{" "}
+                      <span className="text-emerald-300">&quot;Oracle SQL&quot;</span>
+                    </p>
+                    <p className="pl-3 sm:pl-4 text-slate-300">],</p>
+                    <p className="pl-3 sm:pl-4">
                       <span className="text-cyan-300">&quot;devops&quot;</span>: [
+                    </p>
+                    <p className="pl-6 sm:pl-8">
                       <span className="text-emerald-300">&quot;Docker&quot;</span>,{" "}
                       <span className="text-emerald-300">&quot;Docker Swarm&quot;</span>,{" "}
                       <span className="text-emerald-300">&quot;Linux&quot;</span>,{" "}
-                      <span className="text-emerald-300">&quot;Nginx&quot;</span>],
+                      <span className="text-emerald-300">&quot;Nginx&quot;</span>
                     </p>
-                    <p className="pl-4">
+                    <p className="pl-3 sm:pl-4 text-slate-300">],</p>
+                    <p className="pl-3 sm:pl-4">
                       <span className="text-cyan-300">&quot;telemetry&quot;</span>: [
-                      <span className="text-emerald-300">&quot;Grafana&quot;</span>,{" "}
-                      <span className="text-emerald-300">&quot;Prometheus&quot;</span>]
                     </p>
+                    <p className="pl-6 sm:pl-8">
+                      <span className="text-emerald-300">&quot;Grafana&quot;</span>,{" "}
+                      <span className="text-emerald-300">&quot;Prometheus&quot;</span>
+                    </p>
+                    <p className="pl-3 sm:pl-4 text-slate-300">]</p>
                     <p className="text-slate-300">&#125;</p>
                   </div>
                 )}
@@ -297,33 +315,33 @@ export default function Hero() {
                     <p>
                       <span className="text-violet-400">services</span>:
                     </p>
-                    <p className="pl-4">
+                    <p className="pl-3 sm:pl-4">
                       <span className="text-cyan-300">api_gateway</span>:
                     </p>
-                    <p className="pl-8 text-slate-400">
+                    <p className="pl-6 sm:pl-8 text-slate-400">
                       image: <span className="text-emerald-300">nginx:alpine</span>
                     </p>
-                    <p className="pl-8 text-slate-400">ports: [&quot;80:80&quot;, &quot;443:443&quot;]</p>
-                    <p className="pl-4">
+                    <p className="pl-6 sm:pl-8 text-slate-400">ports: [&quot;80:80&quot;, &quot;443:443&quot;]</p>
+                    <p className="pl-3 sm:pl-4">
                       <span className="text-cyan-300">backend_cluster</span>:
                     </p>
-                    <p className="pl-8 text-slate-400">
+                    <p className="pl-6 sm:pl-8 text-slate-400">
                       image: <span className="text-emerald-300">celloscope/core-api:latest</span>
                     </p>
-                    <p className="pl-8 text-slate-400">
+                    <p className="pl-6 sm:pl-8 text-slate-400">
                       deploy: &#123; replicas: <span className="text-amber-400">4</span>, mode: <span className="text-emerald-300">&quot;replicated&quot;</span> &#125;
                     </p>
-                    <p className="pl-4">
+                    <p className="pl-3 sm:pl-4">
                       <span className="text-cyan-300">telemetry_agent</span>:
                     </p>
-                    <p className="pl-8 text-slate-400">
+                    <p className="pl-6 sm:pl-8 text-slate-400">
                       image: <span className="text-emerald-300">prom/prometheus:v2.50</span>
                     </p>
                   </div>
                 )}
 
                 {/* Simulated Terminal Status Footer */}
-                <div className="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] text-slate-500">
+                <div className="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-[10px] sm:text-[11px] text-slate-500 font-mono-code">
                   <div className="flex items-center space-x-2">
                     <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
                     <span>node: v20+ / swarm: active</span>

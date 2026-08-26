@@ -87,8 +87,8 @@ export default function TypewriterText({
       </h1>
 
       {/* Dynamic Subtitle Roles */}
-      <div className="h-8 sm:h-9 flex items-center">
-        <p className="text-lg sm:text-2xl font-mono-code text-slate-300 flex items-center">
+      <div className="min-h-[2.25rem] sm:min-h-[2.5rem] flex items-center">
+        <p className="text-base sm:text-xl lg:text-2xl font-mono-code text-slate-300 flex items-center flex-wrap">
           <span className="text-cyan-400 font-bold mr-2">&gt;</span>
           <span className="text-slate-200">{displayedRole}</span>
           <span className="inline-block w-2 h-4 sm:h-5 bg-emerald-400 ml-1 animate-pulse" />
